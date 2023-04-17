@@ -1,0 +1,24 @@
+sudo docker compose up
+sudo docker compose down
+
+mlflow server     
+	--backend-store-uri postgresql+psycopg2://root:root@{Container_İp}:5432/postgres     
+	--default-artifact-root hdfs://localhost:9000/Models
+
+
+Start prefect ui:
+  prefect server start
+Create Blocks (Storage, Process): ## Names must be lowercase and not use _ 
+  python blx.py
+How to Learn blocks-slug to use create Deployments:
+  prefect blocks ls
+  -sb {local-file-system/slug}
+  -ib {process/slug}
+Create Deployments with terminal:
+  prefect deployment build 
+  -n nyctaxi-dep 
+  -sb local-file-system/nyctaxi-storage-block 
+  -ib process/nyctaxi-process-infra 
+  Transform.py:main --apply
+How to start agent:
+  prefect agent start -q 'default'

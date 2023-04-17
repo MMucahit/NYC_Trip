@@ -1,0 +1,55 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: mlflow
+    volumes:
+       - ./local_pgdata:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+  
+  mlflow:
+    image: 'atcommons/mlflow-server'
+    build: .
+    ports:
+      - "5000:5000"
+    networks:
+      - postgres
+    volumes:
+      - "./data:/mlflow"
+    environment:
+      - MLFOW_BACKEND_STORE_URI=postgresql+psycopg2://root:root@postgres:5432/mlflow  
+      - DEFAULT_ARTIFACT_ROOT=hdfs://localhost:9000/Models 
+    depends_on:
+      - postgres
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+       - ./pgadmin-data:/var/lib/pgadmin:rw
+    ports:
+      - "8080:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+    postgres:
+    pgadmin:
