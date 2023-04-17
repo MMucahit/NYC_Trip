@@ -2,7 +2,7 @@
 
 NYC_Trip veri seti kullanılarak yolcuların bindiği ve ineceği lokasyonları seçerek gidecekleri mesefanin süresini hesaplayan bir projedir.
 
-Projenin ana amacı bir modeli canlıya alacak gibi simülasyon yapmaktır. Model Bir veri kaynağından gelen verileri okuyup her 5dk da bir modeli tekrardan eğitip bir önceki model ile kıyaslayarak en başarılı modeli canlıya alır. Bu model ile kullanıcılar arayüz vasıtası ile tahminleme işlemini yapabilirler.
+Projenin ana amacı bir modeli canlıya alacak gibi bir ortam geliştirmektir. Model Bir veri kaynağından gelen verileri okuyup her 5dk da bir modeli tekrardan eğitip bir önceki model ile kıyaslayarak en başarılı modeli canlıya alır. Bu model ile kullanıcılar arayüz vasıtası ile tahminleme işlemini yapabilirler.
 
 ## <b> Projenin çalıştırılabilmesi içine gerekli teknolojiler: </br></b>
 * ```Docker```  </br>
