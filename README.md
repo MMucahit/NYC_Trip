@@ -10,7 +10,7 @@
 <b>! requirements dosyasında gerekli kütüphanler ve versiyonları verilmiştir !</br></b>
 
 <b>Projede kullanılan teknolojiler: </br></b>
-* Docker: KUllanılan teknolojileri her ortamda çalışabilmesini sağlamak için kullanılmıştır. Bütün teknolojiler docker konteynırı haline getirilerek kullanılmıştır. </br>
+* Docker: Kullanılan teknolojileri her ortamda çalışabilmesini sağlamak için kullanılmıştır. Bütün teknolojiler docker konteynırı haline getirilerek kullanılmıştır. </br>
 * Streamlit: Oluşturulan modeli web ortamında sunabilmek için kullanılmıştır.</br>
 * Prefect: Modelin belli aralıklarla otomatik olarak çalıştırılıp eğitilmesi için kullanılmıştır. </br>
 * MLflow: Model parametrelerini loglamak ve modeli kayıt etmek için kullanılmıştır.</br>
