@@ -1,0 +1,9 @@
+mlflow
+pandas==0.25.3
+psutil==5.9.0
+scikit-learn==1.1.2
+typing-extensions==4.4.0
+xgboost==1.7.4
+streamlit==1.21.0
+prefect==2.8.3
+hyperopt==0.2.7
