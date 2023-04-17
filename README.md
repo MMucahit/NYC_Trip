@@ -1,4 +1,4 @@
-# Taksi Süresi Tahminleme
+# Taksi Seyahat Süresi Tahminleme
 
 NYC_Trip veri seti kullanılarak yolcuların bindiği ve ineceği lokasyonları seçerek gidecekleri mesefanin süresini hesaplayan bir projedir.
 
